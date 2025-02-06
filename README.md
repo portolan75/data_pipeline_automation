@@ -1,6 +1,6 @@
 # Data Pipeline Automation with GitHub Actions
 
-This is the repository for my custom `Data Pipeline Automation with GitHub Actions`.
+This is the repository for my custom `Data Pipeline Automation with GitHub Actions` which originated from the work of [Rami Krispin](https://github.com/LinkedInLearning/data-pipeline-automation-with-github-actions-4503382). 
 
 ![](/readme_images/pipeline_automation.drawio.png)
 
@@ -8,7 +8,6 @@ This repo is about how to set up workflows on GitHub Actions to automate data pr
 It shows how to set up a data pipeline, pull metadata from a pipeline, and deploy a live dashboard with GitHub Actions and Pages. 
 It automates hours of running manual scripts, pulling data from APIs or updating dashboards.
 
-_See the readme file in the main branch for updated instructions and information._
 
 ## Instructions
 
@@ -24,7 +23,7 @@ The EIA API is the U.S. Energy Information Administration (EIA) which collects, 
 
 For these purposes, data pipeline outputs and metadata are stored locally, in the [csv](https://github.com/portolan75/data_pipeline_automation/blob/main/csv) and [metadata](https://github.com/portolan75/data_pipeline_automation/blob/main/metadata) folders, but as displayed in the image one can make use of cloud services (like AWS S3, Azure Storage, Google Storage) for a production setup.
 
-## Docker image
+## Customize the Docker image
 To modify the Docker image, just edit the file `.devcontainer/build_docker.sh`, eventually update the image name on `.devcontainer/devcontainer.json` and if other environment variables or requirements changed, consider to edit also `.devcontainer/Dockerfile`, `.devcontainer/requirements.txt`.
 
 To re-create the image:
@@ -34,6 +33,3 @@ To re-create the image:
 
 To open a project within `.devcontatiner`, make sure Terminal is poiting at the project folder (in this example `..path_to/data_pipeline_automation`.
 Inside `..path_to/data_pipeline_automation` make sure there's a folder named `.devcontainer` including the files currently available.
-
-## Original work from:
-[Rami Krispin repo](https://github.com/LinkedInLearning/data-pipeline-automation-with-github-actions-4503382) 
