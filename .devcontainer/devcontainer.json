@@ -1,0 +1,42 @@
+{
+    "name": "EIA Data Automation",
+    "image": "portolan75/ubuntu2404_python311_github:prod",
+    // "build": {
+    //     "dockerfile": "Dockerfile",
+    //     "context": "."
+    // },
+    "runArgs": ["--name", "ubuntu2404_python311_devcontainer", "--rm"], //--name will give the container a name -rm will remove container after exiting it.
+    "customizations": {
+        "settings": {
+            "python.defaultInterpreterPath": "/opt/LEARN_GITHUB_ACTIONS/bin/python3",
+            "python.selectInterpreter": "/opt/LEARN_GITHUB_ACTIONS/bin/python3",
+            "remote.autoForwardPorts": false
+        },
+        "vscode": {
+            "extensions": [
+                // Python Extensions
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                // Documentation Extensions
+                "quarto.quarto",
+                "purocean.drawio-preview",
+                "redhat.vscode-yaml",
+                "yzhang.markdown-all-in-one",
+                // Docker Supporting Extensions
+                "ms-azuretools.vscode-docker",
+                "ms-vscode-remote.remote-containers",
+                // Github Actions
+                "github.vscode-github-actions",
+                // Git graph extension
+                "mhutchie.git-graph",
+                // Rainbow CSV
+                "mechatroner.rainbow-csv",
+                // Live Server
+                "ms-python.vscode-pylance"
+            ]
+        }
+    },
+    "remoteEnv": {
+        "EIA_API_KEY": "${localEnv:EIA_API_KEY}"
+    }
+}
