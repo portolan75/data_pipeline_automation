@@ -44,6 +44,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpcre2-dev \
     locales \
     openjdk-8-jdk \
+    openssh-client \
     screen \
     texinfo \
     texlive \

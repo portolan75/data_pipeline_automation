@@ -1,11 +1,13 @@
 {
     "name": "EIA Data Automation",
-    "image": "portolan75/ubuntu2404_python311_github:prod",
+    "image": "portolan75/ubuntu2204_python311_github:prod",
     // "build": {
     //     "dockerfile": "Dockerfile",
     //     "context": "."
     // },
-    "runArgs": ["--name", "ubuntu2404_python311_devcontainer", "--rm"], //--name will give the container a name -rm will remove container after exiting it.
+    //--name will give the container a name -rm will remove container after exiting it
+    // --platform will make sure to run the container in the accepted Github Actions architecture (linux/amd64). Since Mac is ARM64 Use Docker’s built-in platform emulation to run as AMD64, to develop locally in the same environment as GitHub Actions.
+    "runArgs": ["--name", "ubuntu2404_python311_devcontainer", "--platform", "linux/amd64"],
     "customizations": {
         "settings": {
             "python.defaultInterpreterPath": "/opt/LEARN_GITHUB_ACTIONS/bin/python3",

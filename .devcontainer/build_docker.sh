@@ -3,7 +3,8 @@
 echo "Build the docker"
 
 docker buildx build -f Dockerfile \
-               --no-cache=false \
+               --platform linux/amd64 \
+               --no-cache=true \
                --progress=plain \
                --build-arg PROJECT_NAME="EIA Data Automation" \
                --build-arg VENV_NAME="LEARN_GITHUB_ACTIONS" \
