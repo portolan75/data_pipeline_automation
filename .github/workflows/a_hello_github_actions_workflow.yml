@@ -1,13 +1,13 @@
-name: Test GitHub Actions Container
+name: Test GitHub Actions Workflow
 
 on:
     schedule:
         # cron argument allows to set-up the time when trigger the workflow.
-        # This one starts at the beginning of the hour and runs every 1 hour.
-        - cron: "20 */1 * * *" # asterisk format in order" minutes, hours, day of month, month, day of the week.
+        # Example: "10 */1 * * *" this one starts at the minutes 10 of the hour and runs every 1 hour. 
+        - cron: "10 23 * * *" # asterisk format in order" minutes, hours, day of month, month, day of the week.
 
 jobs:
-    test-workflow-container: # set the workflow name
+    test-workflow: # set the workflow name
         runs-on: ubuntu-24.04 # set the GitHub Actions OS to run the job
         container:
           image: portolan75/ubuntu2404_python311_github:prod # set the workflow container to use

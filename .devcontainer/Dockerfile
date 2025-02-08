@@ -15,7 +15,7 @@ ENV PROJECT_NAME=$PROJECT_NAME
 ENV VENV_NAME=$VENV_NAME
 ENV QUARTO_VER=$QUARTO_VER
 ENV CONFIGURE_OPTIONS="--with-cairo --with-jpeglib --enable-R-shlib --with-blas --with-lapack"
-ENV TZ=UTC
+ENV TZ='Europe/Amsterdam'
 
 # Step 3 - Install dependencies
 RUN apt-get update
@@ -70,6 +70,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Set locale
 RUN locale-gen en_US.UTF-8
+
+# Set the timezone to Europe/Amsterdam
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Set main working directory
 WORKDIR /root

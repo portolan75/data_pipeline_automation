@@ -1,0 +1,32 @@
+name: Time Logs
+
+on:
+    schedule:
+        - cron: "0 */1 * * *" # run every hour
+
+jobs:
+    time-logs: # set the workflow name
+        runs-on: ubuntu-24.04 # set the GitHub Actions OS to run the job
+        container:
+          image: portolan75/ubuntu2404_python311_github:prod # set the workflow container to use
+        steps:
+          # Activate virtualenv. This is to ensure PATH is persistent for all subsequent steps.
+          # In fact the PATH is unique to the current step and changes for each step in a job, this avoid that!
+          - name: Activate venv + add to PATH
+            run: |
+              . /opt/LEARN_GITHUB_ACTIONS/bin/activate
+              echo PATH=$PATH >> $GITHUB_ENV
+        
+          # The checkout actions is a built-in feature that allows to checkout/clone the repository to the workflow.
+          - name: checkout_repo_to_workflow
+            uses: actions/checkout@v3
+            with:
+                ref: "main" # take the main branch of the current repository
+          
+          # From this point onwards is like to the root folder of the main branch.
+          - name: Set-logs
+            run: bash ./logs/set_logs.sh
+            # These ENV credentials are necessary when in set_logs.sh we're committing and pushing the change.
+            env:
+              USER_EMAIL: ${{secrets.USER_EMAIL}} 
+              USER_NAME: ${{secrets.USER_NAME}}

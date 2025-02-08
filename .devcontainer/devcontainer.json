@@ -1,6 +1,6 @@
 {
     "name": "EIA Data Automation",
-    "image": "portolan75/ubuntu2204_python311_github:prod",
+    "image": "portolan75/ubuntu2404_python311_github:prod",
     // "build": {
     //     "dockerfile": "Dockerfile",
     //     "context": "."
