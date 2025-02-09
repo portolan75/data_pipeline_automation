@@ -1,5 +1,5 @@
 ---
-title: "EIA API - Data Refrsh (Python Version)"
+title: "EIA API - Data Refresh (Python Version)"
 format:
   html:
     code-fold: true
@@ -136,11 +136,11 @@ meta_updated = eia_data.append_metadata(meta_path = meta_path, meta = meta_new, 
 We will use Plotly to visualize the series:
 
 ```{python}
-
 if data is not None:
     d = data.sort_values(by = ["subba", "period"])
     fig = px.line(data, x="period", y="value", color="subba")
     fig.show()
+    # fig
 else: 
     print("No new data is available")
 ```
@@ -154,4 +154,5 @@ full_data.head()
 full_data["period"] = pd.to_datetime(full_data["period"])
 fig = px.line(full_data, x="period", y="value", color="subba")
 fig.show()
+# fig
 ```

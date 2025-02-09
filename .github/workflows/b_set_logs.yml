@@ -2,11 +2,11 @@ name: Time Logs
 
 on:
     schedule:
-        - cron: "56 */1 * * *" # run every hour
+        - cron: "00 08 * * *" # run every hour
 
 # permissions: write-all # this will set GITHUB_TOKEN permissions (to write) for all the following jobs and all the available permissions.
 permissions: 
-  contents: write # this will set GITHUB_TOKEN permissions (to write) for contents (git push) for all the following jobs.
+  contents: write # this will set GITHUB_TOKEN permissions (to write) only for contents (git push) for all the following jobs.
 
 jobs:
     time-logs: # set the workflow name

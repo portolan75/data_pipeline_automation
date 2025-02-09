@@ -3,6 +3,9 @@ title: "EIA API - Data Backfill (Python Version)"
 format:
   html:
     code-fold: true
+# execute:
+#   output: asis # Ensures raw HTML from Plotly is included
+#   echo: false
 jupyter: python3
 ---
 
@@ -55,7 +58,7 @@ facets_template = {
   "subba" : None
 }
 
-start = datetime.datetime(2019, 1, 1, 0)
+start = datetime.datetime(2024, 12, 1, 0)
 end = datetime.datetime(2024, 12, 31, 23)
 
 offset = 2250
@@ -132,6 +135,6 @@ We will use Plotly to visualize the series:
 d = data.sort_values(by = ["subba", "period"])
 
 fig = px.line(d, x="period", y="value", color="subba")
-
 fig.show()
+# fig
 ```

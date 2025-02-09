@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="load-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="load-libraries">Load Libraries</h2>
-<div id="c71ca4e8" class="cell" data-execution_count="1">
+<div id="97e802e8" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> eia_api <span class="im">as</span> api</span>
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pio.renderers.default <span class="op">=</span> <span class="st">"iframe"</span> <span class="co"># to render plotly output in HTML files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="af9be882" class="cell" data-execution_count="2">
+<div id="e9c80008" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>raw_json <span class="op">=</span> <span class="bu">open</span>(<span class="st">"../metadata/series.json"</span>)</span>
@@ -140,7 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p><strong>Note:</strong> The API has a data retention policy, and every few months, the last few months are being trimmed. Currently, the first observation available for the California balancing authority subregion dataset is January 1st, 2019. You can pull from the API the series metadata and validate the date of the first observation (see the next code chunk) or check on the <a href="https://www.eia.gov/opendata/browser/electricity/rto/region-sub-ba-data?frequency=hourly&amp;data=value;&amp;sortColumn=period;&amp;sortDirection=desc;">API dashboard</a> using the start filter under the frequency menu.</p>
-<div id="35ca40f1" class="cell" data-execution_count="3">
+<div id="3f66e89c" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>facets_template <span class="op">=</span> {</span>
@@ -148,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"subba"</span> : <span class="va">None</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> datetime.datetime(<span class="dv">2019</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> datetime.datetime(<span class="dv">2024</span>, <span class="dv">12</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> datetime.datetime(<span class="dv">2024</span>, <span class="dv">12</span>, <span class="dv">31</span>, <span class="dv">23</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>offset <span class="op">=</span> <span class="dv">2250</span></span>
@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>data_path <span class="op">=</span> <span class="st">"../csv/ciso_grid_py.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="b98c3431" class="cell" data-execution_count="4">
+<div id="8ca0ba8d" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> api.eia_metadata(api_key <span class="op">=</span> eia_api_key, api_path <span class="op">=</span> api_path)</span>
@@ -170,10 +170,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>dict_keys(['id', 'name', 'description', 'frequency', 'facets', 'data', 'startPeriod', 'endPeriod', 'defaultDateFormat', 'defaultFrequency'])
 2019-01-01T00
-2025-02-03T08</code></pre>
+2025-02-09T08</code></pre>
 </div>
 </div>
-<div id="90961f6b" class="cell" data-execution_count="5">
+<div id="575c2df2" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> series.index:</span>
@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 {'parent': 'CISO', 'subba': 'VEA'}</code></pre>
 </div>
 </div>
-<div id="dc77dd87" class="cell" data-execution_count="6">
+<div id="45c257f2" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(meta)</span>
@@ -220,22 +220,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   index parent subba                             time      start  \
-0      1   CISO  PGAE 2025-02-03 20:40:51.735915+00:00 2019-01-01   
-0      1   CISO   SCE 2025-02-03 20:41:37.613289+00:00 2019-01-01   
-0      1   CISO  SDGE 2025-02-03 20:42:22.881646+00:00 2019-01-01   
-0      1   CISO   VEA 2025-02-03 20:43:03.906464+00:00 2019-01-01   
+0      1   CISO  PGAE 2025-02-09 23:24:48.701805+00:00 2024-12-01   
+0      1   CISO   SCE 2025-02-09 23:24:50.116555+00:00 2024-12-01   
+0      1   CISO  SDGE 2025-02-09 23:24:51.436070+00:00 2024-12-01   
+0      1   CISO   VEA 2025-02-09 23:24:52.680615+00:00 2024-12-01   
 
                   end  start_act             end_act  start_match  end_match  \
-0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
-0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
-0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
-0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
+0 2024-12-31 23:00:00 2024-12-01 2024-12-31 23:00:00         True       True   
+0 2024-12-31 23:00:00 2024-12-01 2024-12-31 23:00:00         True       True   
+0 2024-12-31 23:00:00 2024-12-01 2024-12-31 23:00:00         True       True   
+0 2024-12-31 23:00:00 2024-12-01 2024-12-31 23:00:00         True       True   
 
-   n_obs   na      type  update  success                     comments  
-0  52608  435  backfill   False    False  Missing values were found;   
-0  52608  444  backfill   False    False  Missing values were found;   
-0  52608  430  backfill   False    False  Missing values were found;   
-0  52608  430  backfill   False    False  Missing values were found;   </code></pre>
+   n_obs  na      type  update  success                     comments  
+0    744  23  backfill   False    False  Missing values were found;   
+0    744  23  backfill   False    False  Missing values were found;   
+0    744  23  backfill   False    False  Missing values were found;   
+0    744  23  backfill   False    False  Missing values were found;   </code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -257,52 +257,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>2019-01-01 00:00:00</td>
+<td>2024-12-01 00:00:00</td>
 <td>PGAE</td>
 <td>Pacific Gas and Electric</td>
 <td>CISO</td>
 <td>California Independent System Operator</td>
-<td>10440.0</td>
+<td>10128.0</td>
 <td>megawatthours</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>2019-01-01 01:00:00</td>
+<td>2024-12-01 01:00:00</td>
 <td>PGAE</td>
 <td>Pacific Gas and Electric</td>
 <td>CISO</td>
 <td>California Independent System Operator</td>
-<td>11256.0</td>
+<td>10488.0</td>
 <td>megawatthours</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>2019-01-01 02:00:00</td>
+<td>2024-12-01 02:00:00</td>
 <td>PGAE</td>
 <td>Pacific Gas and Electric</td>
 <td>CISO</td>
 <td>California Independent System Operator</td>
-<td>12501.0</td>
+<td>11299.0</td>
 <td>megawatthours</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>2019-01-01 03:00:00</td>
+<td>2024-12-01 03:00:00</td>
 <td>PGAE</td>
 <td>Pacific Gas and Electric</td>
 <td>CISO</td>
 <td>California Independent System Operator</td>
-<td>12513.0</td>
+<td>12071.0</td>
 <td>megawatthours</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>2019-01-01 04:00:00</td>
+<td>2024-12-01 04:00:00</td>
 <td>PGAE</td>
 <td>Pacific Gas and Electric</td>
 <td>CISO</td>
 <td>California Independent System Operator</td>
-<td>12094.0</td>
+<td>11989.0</td>
 <td>megawatthours</td>
 </tr>
 </tbody>
@@ -311,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="40365d61" class="cell" data-execution_count="7">
+<div id="9d4e76a6" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the data</span></span>
@@ -326,35 +326,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Initial data pull
 Save the data to CSV file
    index parent subba                             time      start  \
-0      1   CISO  PGAE 2025-02-03 20:40:51.735915+00:00 2019-01-01   
-0      1   CISO   SCE 2025-02-03 20:41:37.613289+00:00 2019-01-01   
-0      1   CISO  SDGE 2025-02-03 20:42:22.881646+00:00 2019-01-01   
-0      1   CISO   VEA 2025-02-03 20:43:03.906464+00:00 2019-01-01   
+0      1   CISO  PGAE 2025-02-09 23:24:48.701805+00:00 2024-12-01   
+0      1   CISO   SCE 2025-02-09 23:24:50.116555+00:00 2024-12-01   
+0      1   CISO  SDGE 2025-02-09 23:24:51.436070+00:00 2024-12-01   
+0      1   CISO   VEA 2025-02-09 23:24:52.680615+00:00 2024-12-01   
 
                   end  start_act             end_act  start_match  end_match  \
-0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
-0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
-0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
-0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
+0 2024-12-31 23:00:00 2024-12-01 2024-12-31 23:00:00         True       True   
+0 2024-12-31 23:00:00 2024-12-01 2024-12-31 23:00:00         True       True   
+0 2024-12-31 23:00:00 2024-12-01 2024-12-31 23:00:00         True       True   
+0 2024-12-31 23:00:00 2024-12-01 2024-12-31 23:00:00         True       True   
 
-   n_obs   na      type  update  success                     comments  
-0  52608  435  backfill    True     True  Missing values were found;   
-0  52608  444  backfill    True     True  Missing values were found;   
-0  52608  430  backfill    True     True  Missing values were found;   
-0  52608  430  backfill    True     True  Missing values were found;   </code></pre>
+   n_obs  na      type  update  success                     comments  
+0    744  23  backfill    True     True  Missing values were found;   
+0    744  23  backfill    True     True  Missing values were found;   
+0    744  23  backfill    True     True  Missing values were found;   
+0    744  23  backfill    True     True  Missing values were found;   </code></pre>
 </div>
 </div>
 <section id="plot-the-series" class="level3">
 <h3 class="anchored" data-anchor-id="plot-the-series">Plot the Series</h3>
 <p>We will use Plotly to visualize the series:</p>
-<div id="fff622ac" class="cell" data-execution_count="8">
+<div id="b2cae0d0" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> data.sort_values(by <span class="op">=</span> [<span class="st">"subba"</span>, <span class="st">"period"</span>])</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(d, x<span class="op">=</span><span class="st">"period"</span>, y<span class="op">=</span><span class="st">"value"</span>, color<span class="op">=</span><span class="st">"subba"</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fig</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <iframe scrolling="no" width="100%" height="545px" src="iframe_figures/figure_8.html" frameborder="0" allowfullscreen=""></iframe>

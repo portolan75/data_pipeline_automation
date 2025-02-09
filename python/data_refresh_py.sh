@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-source /opt/$VENV_NAME/bin/activate 
+source /opt/$VENV_NAME/bin/activate
+
+# Check correcy virtual env is activated
+echo $(VIRTUAL_ENV)
 
 rm -rf ./python/data_refresh_py_files
 rm ./python/data_refresh_py.html
@@ -17,7 +20,7 @@ git config --global --add safe.directory $p
 
 
 if [[ "$(git status --porcelain)" != "" ]]; then
-    quarto render python/index.qmd
+    quarto render python/index.qmd --to html
     cp python/index.html docs/index.html
     rm -rf docs/index_files
     cp -R python/index_files/ docs/
@@ -28,7 +31,7 @@ if [[ "$(git status --porcelain)" != "" ]]; then
     git add csv/*
     git add metadata/*
     git add docs/*
-    git commit -m "Auto update of the data"
+    git commit -m "Auto update and refresh of data"
     git push origin main
 else
 echo "Nothing to commit..."

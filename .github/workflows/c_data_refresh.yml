@@ -1,0 +1,25 @@
+name: Data Refresh (Python work)
+
+on:
+    schedule:
+        - cron: "05 07 * * *" # run every day
+
+permissions: 
+  contents: write # this will set GITHUB_TOKEN permissions (to write) only for contents (git push) for all the following jobs.
+
+jobs:
+  dashboard-update-refresh:
+    runs-on: ubuntu-24.04 
+    container:
+        image: portolan75/ubuntu2404_python311_github:prod
+    steps:
+      - name: checkout-repo
+        uses: actions/checkout@v4
+        with:
+          ref: "main"
+      - name: data-refresh
+        run: bash ./python/data_refresh_py.sh
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+          USER_EMAIL: ${{ secrets.USER_EMAIL }}

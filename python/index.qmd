@@ -1,14 +1,14 @@
 --- 
-title: "California Independent System Operator Hourly Demand"
+title: "California Independent System Operator (CISO) Hourly Demand"
 subtitle: "LinkedIn Learning"
 format: dashboard
 --- 
 
 ```{python}
-import plotly.graph_objects as go
+import plotly.express as px
 import plotly.io as pio # to render plotly output in HTML files
 pio.renderers.default = "iframe" # to render plotly output in HTML files
-import plotly.express as px
+import plotly.graph_objects as go
 import pandas as pd
 import os
 import datetime
