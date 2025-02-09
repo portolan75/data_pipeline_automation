@@ -2,7 +2,7 @@ name: Time Logs
 
 on:
     schedule:
-        - cron: "49 */1 * * *" # run every hour
+        - cron: "56 */1 * * *" # run every hour
 
 # permissions: write-all # this will set GITHUB_TOKEN permissions (to write) for all the following jobs and all the available permissions.
 permissions: 
