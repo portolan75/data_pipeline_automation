@@ -3,6 +3,8 @@ title: "EIA API - Data Backfill (Python Version)"
 format:
   html:
     code-fold: true
+    theme: journal
+    embed-resources: false
 # execute:
 #   output: asis # Ensures raw HTML from Plotly is included
 #   echo: false

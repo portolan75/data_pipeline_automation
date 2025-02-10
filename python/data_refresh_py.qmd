@@ -3,6 +3,8 @@ title: "EIA API - Data Refresh (Python Version)"
 format:
   html:
     code-fold: true
+    theme: journal
+    embed-resources: false
 jupyter: python3
 ---
 
@@ -142,13 +144,14 @@ if data is not None:
     fig.show()
     # fig
 else: 
-    print("No new data is available")
+    print("No new data is available since last refresh -> Check GitHub Actions previous Data Refresh workflow run")
 ```
 
 
 
 ```{python}
 full_data = pd.read_csv(data_path)
+full_data = full_data.sort_values(by = ["subba", "period"])
 full_data.head()
 
 full_data["period"] = pd.to_datetime(full_data["period"])

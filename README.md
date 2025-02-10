@@ -31,5 +31,11 @@ To re-create the image:
 - `cd ..project_folder/.devcontainer` then
 - `bash build_docker.sh`
 
-To open a project within `.devcontatiner`, make sure Terminal is poiting at the project folder (in this example `..path_to/data_pipeline_automation`.
+To open a project within `.devcontatiner`, make sure Terminal is poiting at the project folder (in this example `..path_to/data_pipeline_automation`).
 Inside `..path_to/data_pipeline_automation` make sure there's a folder named `.devcontainer` including the files currently available.
+
+The first data_backfile batch execution ran the following command, saving the html output directly in `docs` (default folder for Github Pages):
+`quarto render python/data_backfile_py.qmd --to html --output-dir ../docs/data_backfile_python`
+and removing undesired files/folders:
+`rm -rf python/iframe_figures`
+`rm python/.gitignore`

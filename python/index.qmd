@@ -1,7 +1,9 @@
 --- 
 title: "CISO - California Independent System Operator"
 subtitle: "(electricity hourly demand)"
-format: dashboard
+format: 
+    dashboard:
+        theme: journal
 --- 
 
 ```{python}
@@ -27,7 +29,7 @@ meta_path = "../metadata/ciso_log_py.csv"
 meta = pd.read_csv(meta_path)
 ```
 
-## Row {.tabset}
+## row {.tabset}
 
 ```{python}
 #| title: Hourly Demand By Provider 
