@@ -58,7 +58,7 @@ facets_template = {
   "subba" : None
 }
 
-start = datetime.datetime(2024, 12, 1, 0)
+start = datetime.datetime(2019, 1, 1, 0)
 end = datetime.datetime(2024, 12, 31, 23)
 
 offset = 2250

@@ -1,6 +1,6 @@
 --- 
-title: "California Independent System Operator (CISO) Hourly Demand"
-subtitle: "LinkedIn Learning"
+title: "CISO - California Independent System Operator"
+subtitle: "(electricity hourly demand)"
 format: dashboard
 --- 
 
@@ -27,13 +27,13 @@ meta_path = "../metadata/ciso_log_py.csv"
 meta = pd.read_csv(meta_path)
 ```
 
-## row {.tabset}
+## Row {.tabset}
 
 ```{python}
 #| title: Hourly Demand By Provider 
 
-p = px.line(data, x="period", y="value", color="subba")
-p = p.update_layout(
+fig = px.line(data, x="period", y="value", color="subba")
+fig = fig.update_layout(
     xaxis=dict(
         rangeselector=dict(
             buttons=list([
@@ -64,7 +64,7 @@ p = p.update_layout(
     )
 )
 
-p.show()
+fig.show()
 ```
 
 ```{python}

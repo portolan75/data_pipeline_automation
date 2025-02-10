@@ -13,7 +13,7 @@ It automates hours of running manual scripts, pulling data from APIs or updating
 
 Some Python code examples are available under the [python folder](https://github.com/portolan75/data_pipeline_automation/tree/main/python).
 
-This repo has VScode [setting](https://github.com/portolan75/data_pipeline_automation/tree/main/.devcontainer/devcontainer.json) to launch the repo inside a Docker container using the Visual Studio Dev Containers extension. The image was built to support arm64 CPU architecture. 
+This repo has VScode [setting](https://github.com/portolan75/data_pipeline_automation/tree/main/.devcontainer/devcontainer.json) to launch the repo inside a Docker container using the Visual Studio Dev Containers extension. The image was built to support amd64 CPU architecture (GitHub Actions default). 
 Alternatively, one can install locally the required Python requirements using the [requirements.txt](https://github.com/portolan75/data_pipeline_automation/blob/main/.devcontainer/requirements.txt).
 
 
