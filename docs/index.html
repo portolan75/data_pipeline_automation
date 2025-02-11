@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -66,7 +32,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-ad91d666832e9a7b34f0eb4736224e6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-8dd3df1fdfed4b80c812cd136e4a85f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="index_files/libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="index_files/libs/quarto-dashboard/stickythead.js"></script>
+<script src="index_files/libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="index_files/libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="index_files/libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
+<script src="index_files/libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="index_files/libs/quarto-dashboard/components.js"></script>
+<link href="index_files/libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -74,146 +48,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent">
+<body class="quarto-dashboard dashboard-fill fullcontent">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
 
-<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">CISO - California Independent System Operator</h1>
-<p class="subtitle lead">(electricity hourly demand)</p>
+    <div class="navbar-brand-container">       
+
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">CISO - California Independent System Operator</a></div>
+        <div class="navbar-subtitle">(electricity hourly demand)</div>
+        
+      </div>
+    </div>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</nav>
 </header>
+<div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">  
+
+<div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card tabset bslib-card html-fill-container" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header bslib-navs-card-title"><div class="card-title"><span style="display: inline">
+
+</span></div><ul class="nav nav-tabs card-header-tabs" role="tablist" data-tabsetid="card-tabset-1"><li class="nav-item" role="presentation"><a href="#card-tabset-1-1" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Hourly Demand By Provider" aria-selected="true" class="nav-link active">Hourly Demand By Provider</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-1-2" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Metadata" aria-selected="false" class="nav-link">Metadata</a></li></ul></div>
 
 
-<div id="ac1bbaa7" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio <span class="co"># to render plotly output in HTML files</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pio.renderers.default <span class="op">=</span> <span class="st">"iframe"</span> <span class="co"># to render plotly output in HTML files</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> great_tables <span class="im">as</span> gt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
+
 </div>
-<div id="a8310a8b" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_path <span class="op">=</span> <span class="st">"../csv/ciso_grid_py.csv"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(data_path)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"period"</span>] <span class="op">=</span> pd.to_datetime(data[<span class="st">"period"</span>])</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>end_date <span class="op">=</span> data[<span class="st">"period"</span>].<span class="bu">max</span>()</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>start_date <span class="op">=</span> end_date <span class="op">-</span>  datetime.timedelta(days <span class="op">=</span> <span class="dv">30</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>meta_path <span class="op">=</span> <span class="st">"../metadata/ciso_log_py.csv"</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>meta <span class="op">=</span> pd.read_csv(meta_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="row" class="level2 tabset">
-<h2 class="tabset anchored" data-anchor-id="row">row</h2>
-<div id="d11a3c90" class="cell" title="Hourly Demand By Provider" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(data, x<span class="op">=</span><span class="st">"period"</span>, y<span class="op">=</span><span class="st">"value"</span>, color<span class="op">=</span><span class="st">"subba"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> fig.update_layout(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        rangeselector<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            buttons<span class="op">=</span><span class="bu">list</span>([</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                <span class="bu">dict</span>(count<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">"1m"</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                     step<span class="op">=</span><span class="st">"month"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                     stepmode<span class="op">=</span><span class="st">"backward"</span>),</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                <span class="bu">dict</span>(count<span class="op">=</span><span class="dv">6</span>,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">"6m"</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                     step<span class="op">=</span><span class="st">"month"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                     stepmode<span class="op">=</span><span class="st">"backward"</span>),</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                <span class="bu">dict</span>(count<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">"YTD"</span>,</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                     step<span class="op">=</span><span class="st">"year"</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                     stepmode<span class="op">=</span><span class="st">"todate"</span>),</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                <span class="bu">dict</span>(count<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                     label<span class="op">=</span><span class="st">"1y"</span>,</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                     step<span class="op">=</span><span class="st">"year"</span>,</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                     stepmode<span class="op">=</span><span class="st">"backward"</span>),</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                <span class="bu">dict</span>(step<span class="op">=</span><span class="st">"all"</span>)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>            ])</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        ),</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        rangeslider<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>            visible<span class="op">=</span><span class="va">True</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        ),</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        <span class="bu">type</span><span class="op">=</span><span class="st">"date"</span>,</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="bu">range</span><span class="op">=</span>[start_date,end_date]</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="tab-content html-fill-item html-fill-container" data-tabset-id="card-tabset-1"><div class="tab-pane active show html-fill-item html-fill-container" role="tabpanel" id="card-tabset-1-1"><div class="card-body html-fill-item html-fill-container" data-title="Hourly Demand By Provider">
+<div class="cell-output cell-output-display html-fill-item html-fill-container">
 <iframe scrolling="no" width="100%" height="545px" src="iframe_figures/figure_3.html" frameborder="0" allowfullscreen=""></iframe>
 </div>
-</div>
-<div id="290039bd" class="cell" title="Metadata" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gt.GT(meta.tail(<span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div id="gqcaduvwmp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-1-2"><div class="card-body html-fill-item html-fill-container" data-title="Metadata">
+<div class="cell-output cell-output-display html-fill-item html-fill-container" data-execution_count="4">
+<div id="sirudpdlbn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
 <style>
-#gqcaduvwmp table {
+#sirudpdlbn table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#gqcaduvwmp thead, tbody, tfoot, tr, td, th { border-style: none; }
+#sirudpdlbn thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#gqcaduvwmp p { margin: 0; padding: 0; }
- #gqcaduvwmp .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #gqcaduvwmp .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #gqcaduvwmp .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #gqcaduvwmp .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #gqcaduvwmp .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #gqcaduvwmp .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #gqcaduvwmp .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #gqcaduvwmp .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #gqcaduvwmp .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #gqcaduvwmp .gt_column_spanner_outer:first-child { padding-left: 0; }
- #gqcaduvwmp .gt_column_spanner_outer:last-child { padding-right: 0; }
- #gqcaduvwmp .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #gqcaduvwmp .gt_spanner_row { border-bottom-style: hidden; }
- #gqcaduvwmp .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #gqcaduvwmp .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #gqcaduvwmp .gt_from_md> :first-child { margin-top: 0; }
- #gqcaduvwmp .gt_from_md> :last-child { margin-bottom: 0; }
- #gqcaduvwmp .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #gqcaduvwmp .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #gqcaduvwmp .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #gqcaduvwmp .gt_row_group_first td { border-top-width: 2px; }
- #gqcaduvwmp .gt_row_group_first th { border-top-width: 2px; }
- #gqcaduvwmp .gt_striped { background-color: rgba(128,128,128,0.05); }
- #gqcaduvwmp .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #gqcaduvwmp .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #gqcaduvwmp .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #gqcaduvwmp .gt_left { text-align: left; }
- #gqcaduvwmp .gt_center { text-align: center; }
- #gqcaduvwmp .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #gqcaduvwmp .gt_font_normal { font-weight: normal; }
- #gqcaduvwmp .gt_font_bold { font-weight: bold; }
- #gqcaduvwmp .gt_font_italic { font-style: italic; }
- #gqcaduvwmp .gt_super { font-size: 65%; }
- #gqcaduvwmp .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #gqcaduvwmp .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#sirudpdlbn p { margin: 0; padding: 0; }
+ #sirudpdlbn .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #sirudpdlbn .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #sirudpdlbn .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #sirudpdlbn .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #sirudpdlbn .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #sirudpdlbn .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #sirudpdlbn .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #sirudpdlbn .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #sirudpdlbn .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #sirudpdlbn .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #sirudpdlbn .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #sirudpdlbn .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #sirudpdlbn .gt_spanner_row { border-bottom-style: hidden; }
+ #sirudpdlbn .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #sirudpdlbn .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #sirudpdlbn .gt_from_md> :first-child { margin-top: 0; }
+ #sirudpdlbn .gt_from_md> :last-child { margin-bottom: 0; }
+ #sirudpdlbn .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #sirudpdlbn .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #sirudpdlbn .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #sirudpdlbn .gt_row_group_first td { border-top-width: 2px; }
+ #sirudpdlbn .gt_row_group_first th { border-top-width: 2px; }
+ #sirudpdlbn .gt_striped { background-color: rgba(128,128,128,0.05); }
+ #sirudpdlbn .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #sirudpdlbn .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #sirudpdlbn .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #sirudpdlbn .gt_left { text-align: left; }
+ #sirudpdlbn .gt_center { text-align: center; }
+ #sirudpdlbn .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #sirudpdlbn .gt_font_normal { font-weight: normal; }
+ #sirudpdlbn .gt_font_bold { font-weight: bold; }
+ #sirudpdlbn .gt_font_italic { font-style: italic; }
+ #sirudpdlbn .gt_super { font-size: 65%; }
+ #sirudpdlbn .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #sirudpdlbn .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="index" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">index</th>
@@ -240,9 +163,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_left">CISO</td>
 <td class="gt_row gt_left">PGAE</td>
 <td class="gt_row gt_right">2025-02-10 20:16:01.268922+00:00</td>
-<td class="gt_row gt_right">2019-01-01</td>
+<td class="gt_row gt_right">2019-01-01 00:00:00</td>
 <td class="gt_row gt_right">2024-12-31 23:00:00</td>
-<td class="gt_row gt_right">2019-01-01</td>
+<td class="gt_row gt_right">2019-01-01 00:00:00</td>
 <td class="gt_row gt_right">2024-12-31 23:00:00</td>
 <td class="gt_row gt_center">True</td>
 <td class="gt_row gt_center">True</td>
@@ -258,9 +181,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_left">CISO</td>
 <td class="gt_row gt_left">SCE</td>
 <td class="gt_row gt_right">2025-02-10 20:17:35.934617+00:00</td>
-<td class="gt_row gt_right">2019-01-01</td>
+<td class="gt_row gt_right">2019-01-01 00:00:00</td>
 <td class="gt_row gt_right">2024-12-31 23:00:00</td>
-<td class="gt_row gt_right">2019-01-01</td>
+<td class="gt_row gt_right">2019-01-01 00:00:00</td>
 <td class="gt_row gt_right">2024-12-31 23:00:00</td>
 <td class="gt_row gt_center">True</td>
 <td class="gt_row gt_center">True</td>
@@ -276,9 +199,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_left">CISO</td>
 <td class="gt_row gt_left">SDGE</td>
 <td class="gt_row gt_right">2025-02-10 20:18:52.332186+00:00</td>
-<td class="gt_row gt_right">2019-01-01</td>
+<td class="gt_row gt_right">2019-01-01 00:00:00</td>
 <td class="gt_row gt_right">2024-12-31 23:00:00</td>
-<td class="gt_row gt_right">2019-01-01</td>
+<td class="gt_row gt_right">2019-01-01 00:00:00</td>
 <td class="gt_row gt_right">2024-12-31 23:00:00</td>
 <td class="gt_row gt_center">True</td>
 <td class="gt_row gt_center">True</td>
@@ -294,9 +217,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_left">CISO</td>
 <td class="gt_row gt_left">VEA</td>
 <td class="gt_row gt_right">2025-02-10 20:19:55.421412+00:00</td>
-<td class="gt_row gt_right">2019-01-01</td>
+<td class="gt_row gt_right">2019-01-01 00:00:00</td>
 <td class="gt_row gt_right">2024-12-31 23:00:00</td>
-<td class="gt_row gt_right">2019-01-01</td>
+<td class="gt_row gt_right">2019-01-01 00:00:00</td>
 <td class="gt_row gt_right">2024-12-31 23:00:00</td>
 <td class="gt_row gt_center">True</td>
 <td class="gt_row gt_center">True</td>
@@ -312,9 +235,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_left">CISO</td>
 <td class="gt_row gt_left">PGAE</td>
 <td class="gt_row gt_right">2025-02-10 21:33:12.542563+00:00</td>
-<td class="gt_row gt_right">2025-01-01</td>
+<td class="gt_row gt_right">2025-01-01 00:00:00</td>
 <td class="gt_row gt_right">2025-02-10 08:00:00</td>
-<td class="gt_row gt_right">2025-01-01</td>
+<td class="gt_row gt_right">2025-01-01 00:00:00</td>
 <td class="gt_row gt_right">2025-02-10 08:00:00</td>
 <td class="gt_row gt_center">True</td>
 <td class="gt_row gt_center">True</td>
@@ -330,9 +253,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_left">CISO</td>
 <td class="gt_row gt_left">SCE</td>
 <td class="gt_row gt_right">2025-02-10 21:33:14.361546+00:00</td>
-<td class="gt_row gt_right">2025-01-01</td>
+<td class="gt_row gt_right">2025-01-01 00:00:00</td>
 <td class="gt_row gt_right">2025-02-10 08:00:00</td>
-<td class="gt_row gt_right">2025-01-01</td>
+<td class="gt_row gt_right">2025-01-01 00:00:00</td>
 <td class="gt_row gt_right">2025-02-10 08:00:00</td>
 <td class="gt_row gt_center">True</td>
 <td class="gt_row gt_center">True</td>
@@ -348,9 +271,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_left">CISO</td>
 <td class="gt_row gt_left">SDGE</td>
 <td class="gt_row gt_right">2025-02-10 21:33:16.206695+00:00</td>
-<td class="gt_row gt_right">2025-01-01</td>
+<td class="gt_row gt_right">2025-01-01 00:00:00</td>
 <td class="gt_row gt_right">2025-02-10 08:00:00</td>
-<td class="gt_row gt_right">2025-01-01</td>
+<td class="gt_row gt_right">2025-01-01 00:00:00</td>
 <td class="gt_row gt_right">2025-02-10 08:00:00</td>
 <td class="gt_row gt_center">True</td>
 <td class="gt_row gt_center">True</td>
@@ -366,13 +289,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_left">CISO</td>
 <td class="gt_row gt_left">VEA</td>
 <td class="gt_row gt_right">2025-02-10 21:33:18.382352+00:00</td>
-<td class="gt_row gt_right">2025-01-01</td>
+<td class="gt_row gt_right">2025-01-01 00:00:00</td>
 <td class="gt_row gt_right">2025-02-10 08:00:00</td>
-<td class="gt_row gt_right">2025-01-01</td>
+<td class="gt_row gt_right">2025-01-01 00:00:00</td>
 <td class="gt_row gt_right">2025-02-10 08:00:00</td>
 <td class="gt_row gt_center">True</td>
 <td class="gt_row gt_center">True</td>
 <td class="gt_row gt_right">969</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_left">refresh</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_left"><na></na></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_left">CISO</td>
+<td class="gt_row gt_left">PGAE</td>
+<td class="gt_row gt_right">2025-02-11 20:53:20.808439+00:00</td>
+<td class="gt_row gt_right">2025-02-10 09:00:00</td>
+<td class="gt_row gt_right">2025-02-11 08:00:00</td>
+<td class="gt_row gt_right">2025-02-10 09:00:00</td>
+<td class="gt_row gt_right">2025-02-11 08:00:00</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_right">24</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_left">refresh</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_left"><na></na></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_left">CISO</td>
+<td class="gt_row gt_left">SCE</td>
+<td class="gt_row gt_right">2025-02-11 20:53:24.012768+00:00</td>
+<td class="gt_row gt_right">2025-02-10 09:00:00</td>
+<td class="gt_row gt_right">2025-02-11 08:00:00</td>
+<td class="gt_row gt_right">2025-02-10 09:00:00</td>
+<td class="gt_row gt_right">2025-02-11 08:00:00</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_right">24</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_left">refresh</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_left"><na></na></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_left">CISO</td>
+<td class="gt_row gt_left">SDGE</td>
+<td class="gt_row gt_right">2025-02-11 20:53:26.400806+00:00</td>
+<td class="gt_row gt_right">2025-02-10 09:00:00</td>
+<td class="gt_row gt_right">2025-02-11 08:00:00</td>
+<td class="gt_row gt_right">2025-02-10 09:00:00</td>
+<td class="gt_row gt_right">2025-02-11 08:00:00</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_right">24</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_left">refresh</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_left"><na></na></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_left">CISO</td>
+<td class="gt_row gt_left">VEA</td>
+<td class="gt_row gt_right">2025-02-11 20:53:28.202731+00:00</td>
+<td class="gt_row gt_right">2025-02-10 09:00:00</td>
+<td class="gt_row gt_right">2025-02-11 08:00:00</td>
+<td class="gt_row gt_right">2025-02-10 09:00:00</td>
+<td class="gt_row gt_right">2025-02-11 08:00:00</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_center">True</td>
+<td class="gt_row gt_right">24</td>
 <td class="gt_row gt_right">0</td>
 <td class="gt_row gt_left">refresh</td>
 <td class="gt_row gt_center">True</td>
@@ -386,11 +381,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
         
 </div>
+</div></div></div><bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-</section>
 
-</main>
-<!-- /main column -->
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -808,8 +807,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+</div> <!-- /container fluid -->
 
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
 
 
 
