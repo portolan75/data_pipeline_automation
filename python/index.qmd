@@ -3,7 +3,8 @@ title: "CISO - California Independent System Operator"
 subtitle: "(electricity hourly demand)"
 format: 
     dashboard:
-        theme: journal
+        theme: zephyr
+jupyter: python3
 --- 
 
 ```{python}

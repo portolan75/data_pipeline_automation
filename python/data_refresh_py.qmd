@@ -3,7 +3,7 @@ title: "EIA API - Data Refresh (Python Version)"
 format:
   html:
     code-fold: true
-    theme: journal
+    theme: zephyr
     embed-resources: false
 jupyter: python3
 ---

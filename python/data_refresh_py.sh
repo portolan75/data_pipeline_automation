@@ -35,7 +35,7 @@ if [[ "$(git status --porcelain)" != "" ]]; then
     # rm ./python/index.html
     # rm -rf ./python/index_files
     rm -rf docs/index_files
-    if quarto render python/index.qmd --to html --output-dir ../docs; then
+    if quarto render python/index.qmd --to dashboard --output-dir ../docs; then
         rm -rf python/iframe_figures
         rm python/.gitignore
         cp docs/index_files/index.html docs/index.html

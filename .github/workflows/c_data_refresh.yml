@@ -2,7 +2,7 @@ name: Data Refresh (Python work)
 
 on:
     schedule:
-        - cron: "30 21 * * *" # run every day
+        - cron: "45 20 * * *" # run every day
 
 permissions: 
   contents: write # this will set GITHUB_TOKEN permissions (to write) only for contents (git push) for all the following jobs.
