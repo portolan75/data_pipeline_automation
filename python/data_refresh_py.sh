@@ -12,7 +12,7 @@ rm -rf docs/data_refresh_python/
 
 if quarto render python/data_refresh_py.qmd --to html --output-dir ../docs/data_refresh_python; then
     rm -rf python/iframe_figures
-    rm python/.gitignore
+    [-f python/.gitignore] && rm python/.gitignore # remove python/.gitignore only if it exits
     # rm -rf docs/data_refresh_python/
     # mkdir -p docs/data_refresh_python
     # cp python/data_refresh_py.html docs/data_refresh_python/
@@ -37,7 +37,7 @@ if [[ "$(git status --porcelain)" != "" ]]; then
     rm -rf docs/index_files
     if quarto render python/index.qmd --to dashboard --output-dir ../docs; then
         rm -rf python/iframe_figures
-        rm python/.gitignore
+        [-f python/.gitignore] && rm python/.gitignore
         cp docs/index_files/index.html docs/index.html
         git config --global user.name $USER_NAME
         git config --global user.email $USER_EMAIL
