@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="data_backfile_py_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="data_backfile_py_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="data_backfile_py_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="data_backfile_py_files/libs/bootstrap/bootstrap-044c68dfc09e912d08f46944bd3be426.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="data_backfile_py_files/libs/bootstrap/bootstrap-885d8bd34036a8827f1018ecfcba14b6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="load-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="load-libraries">Load Libraries</h2>
-<div id="d962b368" class="cell" data-execution_count="1">
+<div id="feec57f7" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> eia_api <span class="im">as</span> api</span>
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pio.renderers.default <span class="op">=</span> <span class="st">"iframe"</span> <span class="co"># to render plotly output in HTML files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="e0efafb4" class="cell" data-execution_count="2">
+<div id="8607bf8f" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>raw_json <span class="op">=</span> <span class="bu">open</span>(<span class="st">"../metadata/series.json"</span>)</span>
@@ -140,7 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p><strong>Note:</strong> The API has a data retention policy, and every few months, the last few months are being trimmed. Currently, the first observation available for the California balancing authority subregion dataset is January 1st, 2019. You can pull from the API the series metadata and validate the date of the first observation (see the next code chunk) or check on the <a href="https://www.eia.gov/opendata/browser/electricity/rto/region-sub-ba-data?frequency=hourly&amp;data=value;&amp;sortColumn=period;&amp;sortDirection=desc;">API dashboard</a> using the start filter under the frequency menu.</p>
-<div id="090d1674" class="cell" data-execution_count="3">
+<div id="7a44b393" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>facets_template <span class="op">=</span> {</span>
@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>data_path <span class="op">=</span> <span class="st">"../csv/ciso_grid_py.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="69598b8d" class="cell" data-execution_count="4">
+<div id="e64f674d" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> api.eia_metadata(api_key <span class="op">=</span> eia_api_key, api_path <span class="op">=</span> api_path)</span>
@@ -170,10 +170,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>dict_keys(['id', 'name', 'description', 'frequency', 'facets', 'data', 'startPeriod', 'endPeriod', 'defaultDateFormat', 'defaultFrequency'])
 2019-01-01T00
-2025-02-10T08</code></pre>
+2025-03-24T07</code></pre>
 </div>
 </div>
-<div id="49a33d54" class="cell" data-execution_count="5">
+<div id="24ee416c" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> series.index:</span>
@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 {'parent': 'CISO', 'subba': 'VEA'}</code></pre>
 </div>
 </div>
-<div id="1890ef34" class="cell" data-execution_count="6">
+<div id="d4a2da94" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(meta)</span>
@@ -220,10 +220,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   index parent subba                             time      start  \
-0      1   CISO  PGAE 2025-02-10 20:16:01.268922+00:00 2019-01-01   
-0      1   CISO   SCE 2025-02-10 20:17:35.934617+00:00 2019-01-01   
-0      1   CISO  SDGE 2025-02-10 20:18:52.332186+00:00 2019-01-01   
-0      1   CISO   VEA 2025-02-10 20:19:55.421412+00:00 2019-01-01   
+0      1   CISO  PGAE 2025-03-24 18:11:13.863987+00:00 2019-01-01   
+0      1   CISO   SCE 2025-03-24 18:12:17.239870+00:00 2019-01-01   
+0      1   CISO  SDGE 2025-03-24 18:13:10.493020+00:00 2019-01-01   
+0      1   CISO   VEA 2025-03-24 18:14:00.654492+00:00 2019-01-01   
 
                   end  start_act             end_act  start_match  end_match  \
 0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
@@ -311,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="2b26be2b" class="cell" data-execution_count="7">
+<div id="9a012173" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the data</span></span>
@@ -326,10 +326,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Initial data pull
 Save the data to CSV file
    index parent subba                             time      start  \
-0      1   CISO  PGAE 2025-02-10 20:16:01.268922+00:00 2019-01-01   
-0      1   CISO   SCE 2025-02-10 20:17:35.934617+00:00 2019-01-01   
-0      1   CISO  SDGE 2025-02-10 20:18:52.332186+00:00 2019-01-01   
-0      1   CISO   VEA 2025-02-10 20:19:55.421412+00:00 2019-01-01   
+0      1   CISO  PGAE 2025-03-24 18:11:13.863987+00:00 2019-01-01   
+0      1   CISO   SCE 2025-03-24 18:12:17.239870+00:00 2019-01-01   
+0      1   CISO  SDGE 2025-03-24 18:13:10.493020+00:00 2019-01-01   
+0      1   CISO   VEA 2025-03-24 18:14:00.654492+00:00 2019-01-01   
 
                   end  start_act             end_act  start_match  end_match  \
 0 2024-12-31 23:00:00 2019-01-01 2024-12-31 23:00:00         True       True   
@@ -347,7 +347,7 @@ Save the data to CSV file
 <section id="plot-the-series" class="level3">
 <h3 class="anchored" data-anchor-id="plot-the-series">Plot the Series</h3>
 <p>We will use Plotly to visualize the series:</p>
-<div id="45f8b87a" class="cell" data-execution_count="8">
+<div id="be8dd957" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> data.sort_values(by <span class="op">=</span> [<span class="st">"subba"</span>, <span class="st">"period"</span>])</span>

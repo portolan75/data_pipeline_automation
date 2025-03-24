@@ -61,7 +61,7 @@ data_path = "../csv/ciso_grid_py.csv"
 ```{python}
 meta_obj = eia_data.get_metadata(api_key = eia_api_key, api_path = api_path, meta_path = meta_path, series = series)
 
-gt.GT(meta_obj.request_meta,)
+gt.GT(meta_obj.request_meta)
 ```
 
 ```{python}
@@ -107,8 +107,12 @@ for i in m.index:
         d = eia_data.append_data(data_path = data_path, new_data = ts_obj, save = True)
         meta_temp["update"] = True
     else:
-        meta_temp["update"] = False
-        meta_temp["comments"] = meta_temp["comments"] + "The data refresh failed, please check the log; "
+        # meta_temp["update"] = False
+        meta_temp["comments"] = meta_temp["comments"] + "The data refresh done anyway, please check the log; "
+        print("Data Refresh done anyway -  to avoid blocking further updates")
+        # IN THE FUTURE ADD FUNCTION TO RUN EVERY 6 MONTHS TO CHECK FOR UPDATES FOR PAST SEMESTER AND EVENTUALLY REFRESH DATA
+        d = eia_data.append_data(data_path = data_path, new_data = ts_obj, save = True)
+        meta_temp["update"] = True
 
     meta_df = pd.DataFrame([meta_temp])
     
